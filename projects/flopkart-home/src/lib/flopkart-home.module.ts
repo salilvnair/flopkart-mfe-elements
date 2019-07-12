@@ -10,7 +10,7 @@ import { createCustomElement } from '@angular/elements';
 })
 export class FlopkartHomeModule {
   constructor(private injector: Injector){
-    const flopKartCartElement = createCustomElement(FlopkartHomeComponent,{injector: this.injector});
-    customElements.define('flopkart-home',flopKartCartElement);
+    const flopKartHomeElement = createCustomElement(FlopkartHomeComponent,{injector: this.injector});
+    customElements.define('flopkart-home',flopKartHomeElement);
   }
 }
