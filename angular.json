@@ -127,10 +127,12 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "tsConfig": "projects/flopkart-cart/tsconfig.lib.json",
-            "project": "projects/flopkart-cart/ng-package.json"
+            "customWebpackConfig": {
+              "path": "./fc-webpack.config.js",
+              "mergeStrategies": { "externals": "replace" }
+            }
           }
         },
         "test": {
@@ -163,8 +165,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "projects/flopkart-cart-mfe/custom-webpack.config.js",
+              "mergeStrategies": { "externals": "replace" }
+            },
             "outputPath": "dist/flopkart-cart-mfe",
             "index": "projects/flopkart-cart-mfe/src/index.html",
             "main": "projects/flopkart-cart-mfe/src/main.ts",
@@ -275,10 +281,12 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "tsConfig": "projects/flopkart-home/tsconfig.lib.json",
-            "project": "projects/flopkart-home/ng-package.json"
+            "customWebpackConfig": {
+              "path": "./fh-webpack.config.js",
+              "mergeStrategies": { "externals": "replace" }
+            }
           }
         },
         "test": {
@@ -311,8 +319,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "projects/flopkart-home-mfe/custom-webpack.config.js",
+              "mergeStrategies": { "externals": "replace" }
+            },
             "outputPath": "dist/flopkart-home-mfe",
             "index": "projects/flopkart-home-mfe/src/index.html",
             "main": "projects/flopkart-home-mfe/src/main.ts",
