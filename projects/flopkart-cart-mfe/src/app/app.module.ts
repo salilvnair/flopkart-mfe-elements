@@ -13,7 +13,7 @@ import { FlopkartCartModule } from 'projects/flopkart-cart/src/public-api';
     FlopkartCartModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })

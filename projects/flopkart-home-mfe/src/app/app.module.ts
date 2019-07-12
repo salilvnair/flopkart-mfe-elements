@@ -13,7 +13,7 @@ import { FlopkartHomeModule } from '../../../flopkart-home/src/lib/flopkart-home
     FlopkartHomeModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
