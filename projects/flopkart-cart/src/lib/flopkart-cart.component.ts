@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Product } from './product.model';
 
 @Component({
-  selector: 'flopkart-cart',
+  selector: 'app-flopkart-cart',
   templateUrl: './flopkart-cart.component.html',
   styleUrls: ['./flopkart-cart.component.css']
 })

@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from './product.model';
 
 @Component({
-  selector: 'flopkart-home',
+  selector: 'app-flopkart-home',
   templateUrl: './flopkart-home.component.html',
   styleUrls: ['./flopkart-home.component.css']
 })
