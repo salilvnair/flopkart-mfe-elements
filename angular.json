@@ -26,7 +26,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -115,6 +119,303 @@
           }
         }
       }
-    }},
+    },
+    "flopkart-cart": {
+      "projectType": "library",
+      "root": "projects/flopkart-cart",
+      "sourceRoot": "projects/flopkart-cart/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/flopkart-cart/tsconfig.lib.json",
+            "project": "projects/flopkart-cart/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/flopkart-cart/src/test.ts",
+            "tsConfig": "projects/flopkart-cart/tsconfig.spec.json",
+            "karmaConfig": "projects/flopkart-cart/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/flopkart-cart/tsconfig.lib.json",
+              "projects/flopkart-cart/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "flopkart-cart-mfe": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/flopkart-cart-mfe",
+      "sourceRoot": "projects/flopkart-cart-mfe/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/flopkart-cart-mfe",
+            "index": "projects/flopkart-cart-mfe/src/index.html",
+            "main": "projects/flopkart-cart-mfe/src/main.ts",
+            "polyfills": "projects/flopkart-cart-mfe/src/polyfills.ts",
+            "tsConfig": "projects/flopkart-cart-mfe/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/flopkart-cart-mfe/src/favicon.ico",
+              "projects/flopkart-cart-mfe/src/assets"
+            ],
+            "styles": [
+              "projects/flopkart-cart-mfe/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/flopkart-cart-mfe/src/environments/environment.ts",
+                  "with": "projects/flopkart-cart-mfe/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "flopkart-cart-mfe:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "flopkart-cart-mfe:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "flopkart-cart-mfe:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/flopkart-cart-mfe/src/test.ts",
+            "polyfills": "projects/flopkart-cart-mfe/src/polyfills.ts",
+            "tsConfig": "projects/flopkart-cart-mfe/tsconfig.spec.json",
+            "karmaConfig": "projects/flopkart-cart-mfe/karma.conf.js",
+            "assets": [
+              "projects/flopkart-cart-mfe/src/favicon.ico",
+              "projects/flopkart-cart-mfe/src/assets"
+            ],
+            "styles": [
+              "projects/flopkart-cart-mfe/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/flopkart-cart-mfe/tsconfig.app.json",
+              "projects/flopkart-cart-mfe/tsconfig.spec.json",
+              "projects/flopkart-cart-mfe/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/flopkart-cart-mfe/e2e/protractor.conf.js",
+            "devServerTarget": "flopkart-cart-mfe:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "flopkart-cart-mfe:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "flopkart-home": {
+      "projectType": "library",
+      "root": "projects/flopkart-home",
+      "sourceRoot": "projects/flopkart-home/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/flopkart-home/tsconfig.lib.json",
+            "project": "projects/flopkart-home/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/flopkart-home/src/test.ts",
+            "tsConfig": "projects/flopkart-home/tsconfig.spec.json",
+            "karmaConfig": "projects/flopkart-home/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/flopkart-home/tsconfig.lib.json",
+              "projects/flopkart-home/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "flopkart-home-mfe": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/flopkart-home-mfe",
+      "sourceRoot": "projects/flopkart-home-mfe/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/flopkart-home-mfe",
+            "index": "projects/flopkart-home-mfe/src/index.html",
+            "main": "projects/flopkart-home-mfe/src/main.ts",
+            "polyfills": "projects/flopkart-home-mfe/src/polyfills.ts",
+            "tsConfig": "projects/flopkart-home-mfe/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/flopkart-home-mfe/src/favicon.ico",
+              "projects/flopkart-home-mfe/src/assets"
+            ],
+            "styles": [
+              "projects/flopkart-home-mfe/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/flopkart-home-mfe/src/environments/environment.ts",
+                  "with": "projects/flopkart-home-mfe/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "flopkart-home-mfe:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "flopkart-home-mfe:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "flopkart-home-mfe:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/flopkart-home-mfe/src/test.ts",
+            "polyfills": "projects/flopkart-home-mfe/src/polyfills.ts",
+            "tsConfig": "projects/flopkart-home-mfe/tsconfig.spec.json",
+            "karmaConfig": "projects/flopkart-home-mfe/karma.conf.js",
+            "assets": [
+              "projects/flopkart-home-mfe/src/favicon.ico",
+              "projects/flopkart-home-mfe/src/assets"
+            ],
+            "styles": [
+              "projects/flopkart-home-mfe/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/flopkart-home-mfe/tsconfig.app.json",
+              "projects/flopkart-home-mfe/tsconfig.spec.json",
+              "projects/flopkart-home-mfe/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/flopkart-home-mfe/e2e/protractor.conf.js",
+            "devServerTarget": "flopkart-home-mfe:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "flopkart-home-mfe:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "flopkart-mfe"
 }

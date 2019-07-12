@@ -18,6 +18,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "flopkart-cart": [
+        "dist/flopkart-cart"
+      ],
+      "flopkart-cart/*": [
+        "dist/flopkart-cart/*"
+      ],
+      "flopkart-home": [
+        "dist/flopkart-home"
+      ],
+      "flopkart-home/*": [
+        "dist/flopkart-home/*"
+      ]
+    }
   }
 }

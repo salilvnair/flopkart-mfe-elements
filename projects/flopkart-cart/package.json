@@ -1,0 +1,9 @@
+{
+  "name": "flopkart-cart",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.0.3",
+    "@angular/core": "^8.0.3",
+    "@angular/elements": "^8.0.3"
+  }
+}
