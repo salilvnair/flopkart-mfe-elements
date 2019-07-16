@@ -13,7 +13,9 @@
     "clean-cart": "rm -rf dist/flopkart-cart-mfe",
     "build-home": "ng build --project=flopkart-home-mfe --prod --output-hashing=none",
     "build-cart": "ng build --project=flopkart-cart-mfe --prod --output-hashing=none",
-    "postinstall": "node build.js"
+    "postinstall": "node build.js",
+    "deploy-home":"heroku maintenance:on --app=flopkart-mfe-home && git push heroku-mfe-home master && heroku maintenance:off --app=flopkart-mfe-home",
+    "deploy-cart":"heroku maintenance:on --app=flopkart-mfe-cart && git push heroku-mfe-cart master && heroku maintenance:off --app=flopkart-mfe-cart"
   },
   "private": true,
   "dependencies": {
